@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150131135852) do
+ActiveRecord::Schema.define(:version => 20150131152540) do
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -21,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20150131135852) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "location_id"
   end
+
+  add_index "users", ["location_id"], :name => "index_users_on_location_id"
 
 end

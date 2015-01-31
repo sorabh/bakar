@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+ENV['RAILS_ENV'] ||= 'development'
 fb_cred = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'credentials', 'facebook.yml'))[ENV['RAILS_ENV']]
 ENV['FACEBOOK_APP_ID'] = fb_cred['app_id']
 ENV['FACEBOOK_SECRET'] = fb_cred['api_secret']
