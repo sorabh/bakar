@@ -5,7 +5,11 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+ENV['RAILS_ENV'] ||= 'development'
 
+fb_cred = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'credentials', 'facebook.yml'))[ENV['RAILS_ENV']]
+ENV['FACEBOOK_APP_ID'] = fb_cred['app_id']
+ENV['FACEBOOK_SECRET'] = fb_cred['api_secret']
 module Bakar
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -22,6 +26,7 @@ module Bakar
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
 
 
   end
