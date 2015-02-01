@@ -1,0 +1,5 @@
+{
+  "privacy" => "public",
+  "guest_access" => true,
+  "topic" => ""
+}

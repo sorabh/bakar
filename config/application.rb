@@ -7,6 +7,9 @@ fb_cred = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'c
 ENV['FACEBOOK_APP_ID'] = fb_cred['app_id']
 ENV['FACEBOOK_SECRET'] = fb_cred['api_secret']
 
+hipchat_cred = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'credentials', 'hipchat.yml'))[ENV['RAILS_ENV']]
+ENV['HIPCHAT_TOKEN'] = hipchat_cred['token']
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
