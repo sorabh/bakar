@@ -1,20 +1,18 @@
 <header class="design_align_header">
   <div class="grid">
-    <a href="/" class="logo"><img src="/img/design_align/logo.svg" alt=""></a>
+    <a href="/" class="logo"><img src="/assets/logo.png" alt=""></a>
     <nav>
       <ul>
-        <li class="nav-pricing"><a href="/pricing">Pricing</a></li>
-        <li class="nav-integrations"><a href="/integrations">Integrations</a></li>
-        <li class="nav-server"><a href="/server">Server</a></li>
-        <li class="nav-downloads"><a href="/downloads">Downloads</a></li>
+        <li class="nav-interest"><a href="#">Interest</a></li>
+        <li class="nav-request"><a href="#">Requests</a></li>
         <% if current_user %>
-            <li class="nav-downloads"><a href="#"><%= current_user.name %></a></li>
+            <li class="nav-user"><a href="#"><%= current_user.name %></a></li>
             <li class="nav-sign-in">
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
           </li>
         <% else %>
           <li class="nav-sign-in">
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
           </li>
         <% end %>
       </ul>

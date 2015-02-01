@@ -11,6 +11,7 @@ Bakar::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'request_chat', to: 'users#request_chat', as: 'start_chat'
   resources :chats do
     resources :messages
   end

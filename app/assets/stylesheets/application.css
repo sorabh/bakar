@@ -126,3 +126,9 @@ header nav {
     float: right;
     line-height: 95px;
 }
+header .grid .logo img {
+    width: 182px;
+}
+.hipchat-support{
+    margin-top: 40px;
+}

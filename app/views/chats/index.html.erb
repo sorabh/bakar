@@ -1,21 +1,8 @@
-<h1>Listing chats</h1>
+<%= content_for :stylesheets do %><%= stylesheet_link_tag 'home.css' %><%- end %>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render '/shared/header' %>
 
-<% @chats.each do |chat| %>
-  <tr>
-    <td><%= link_to 'Show', chat %></td>
-    <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
-    <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :js_code do %>
+    <%= javascript_include_tag "jquery.hipchat", "hipchat.include" %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Chat', new_chat_path %>
+<div class="hipchat-support feature"></div>

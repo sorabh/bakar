@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.update_attribute(:chat_requested, false)
     session[:user_id] = nil
     redirect_to root_url
   end
