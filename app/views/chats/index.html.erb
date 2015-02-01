@@ -5,7 +5,6 @@
 <%= javascript_tag do%>
   window.guestUrl = '<%= current_user.guest_url %>';
 <% end %>
-<% binding.pry %>
 
 <% content_for :js_code do %>
     <%= javascript_include_tag "jquery.hipchat", "hipchat.include" %>
