@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150201021025) do
+ActiveRecord::Schema.define(:version => 20150201065501) do
 
   create_table "chats", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20150201021025) do
     t.datetime "updated_at",       :null => false
     t.integer  "location_id"
     t.boolean  "chat_requested"
+    t.string   "guest_url"
   end
 
   add_index "users", ["chat_requested"], :name => "index_users_on_chat_requested"
