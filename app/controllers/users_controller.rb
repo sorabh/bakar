@@ -8,11 +8,13 @@ class UsersController < ApplicationController
     if @interested_user
       current_user.update_attribute(:chat_requested, false)
       @interested_user.update_attribute(:chat_requested, false)
-      @guest_url = @interested_user.guest_url
+      guest_url = @interested_user.guest_url
     else
-      current_user.update_attribute(:chat_requested, true)
-      @guest_url = create_room()
-      current_user.update_attribute(:guest_url, @guest_url)
+      if current_user.guest_url.nil?
+        current_user.update_attribute(:chat_requested, true)
+        guest_url = create_room()
+        current_user.update_attribute(:guest_url, guest_url)
+      end  
     end
 
     redirect_to "/chats"   
@@ -33,6 +35,8 @@ class UsersController < ApplicationController
       http.request(req)
     end
     room_id =  JSON.parse(@res.body)["id"]
+    current_user.update_attribute(:room_id, room_id)
+
 
     #get request to extract guest url from room
     uri2 = URI("https://api.hipchat.com/v2/room/#{room_id}?auth_token=#{ENV['HIPCHAT_TOKEN']}")

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :location
 
-  attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid
+  attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid, :guest_url, :room_id, :chat_requested
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
