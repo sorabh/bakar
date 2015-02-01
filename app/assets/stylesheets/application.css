@@ -11,3 +11,118 @@
  *= require_self
  *= require_tree .
  */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+}
+
+body, div, fieldset, form, h1, h2, h3, h4, h5, h6, html, img, p, pre {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+body {
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+header {
+    background: none repeat scroll 0% 0% #FFF;
+    height: 95px;
+}
+
+h1 {
+    color: #205081;
+    font-family: "LLCircularWeb-Bold",sans-serif;
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+header, footer, section, nav {
+    display: block;
+}
+header.design_align_header {
+    border: 0px none;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+header .grid {
+    position: relative;
+}
+header .grid .logo {
+    display: inline-block;
+    left: 5%;
+    max-width: 182px;
+    position: absolute;
+    top: 20px;
+}
+header nav {
+    float: right;
+    line-height: 95px;
+    margin-top: 30px;
+}
+
+header ul {
+    list-style: outside none none;
+}
+
+header li {
+    float: left;
+    font-size: 14px;
+    margin-left: 40px;
+}
+header a {
+    color: #3572B0 !important;
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.grid {
+    margin: 0px auto;
+    padding-bottom: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
+    max-width: 1056px;
+}
+h1 {
+    color: #205081;
+    font-family: "LLCircularWeb-Bold",sans-serif;
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.button {
+    background: none repeat scroll 0% 0% #FFF;
+    border: 1px solid #67AB49;
+    border-radius: 4px;
+    color: #67AB49;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    height: 30px;
+    line-height: 28px;
+    padding: 0px 10px;
+}
+header nav {
+    float: right;
+    line-height: 95px;
+}

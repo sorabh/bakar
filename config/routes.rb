@@ -1,4 +1,7 @@
 Bakar::Application.routes.draw do
+  resources :chats
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -8,6 +11,9 @@ Bakar::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :chats do
+    resources :messages
+  end
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

@@ -1,1 +1,16 @@
-<h4>Welcome</h4>
+<%= content_for :stylesheets do %><%= stylesheet_link_tag 'home.css' %><%- end %>
+
+<%= render '/shared/header' %>
+
+
+<section id="hero" class="hero">
+  <h1>Bring your team to life</h1>
+  <p>Group and private chat, file sharing, and integrations.</p>
+  <div>
+    <% if current_user %>
+        <a href="/" class="button green" >Start chatting, it's free</a>
+    <% else %>
+      <a href="/auth/facebook" class="button green", id=sign_in">Start chatting, it's free</a>
+    <% end %>
+  </div>
+</section>

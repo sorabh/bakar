@@ -21,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'faye'
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,3 +38,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+group :test, :development do
+  gem 'pry-rails'
+end

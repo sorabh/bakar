@@ -4,16 +4,14 @@
   <title>Bakar</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :stylesheets %>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aui/5.6.10/aui-next/css/aui.min.css" type="text/javascript" charset="utf-8"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="user_nav">
-  <% if current_user %>
-      Signed in as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+
 </div>
 
 <%= yield %>
